@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MSV_Icon">
+         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+
+    <style name="MSV_FilterTextName" >
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/black_85</item>
+    </style>
+
+
+    <style name="MSV_SectionSelectFilter" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_55</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="MSV_NoFilter">
+        <item name="android:textColor">@color/black_55</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

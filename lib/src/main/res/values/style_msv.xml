@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MSV_Icon">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="MSV_SearchBox">
+        <item name="android:textColor">#212121</item>
+        <item name="android:textColorHint">#727272</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:inputType">textNoSuggestions</item>
+    </style>
+
+    <style name="MSV_NoFilter">
+        <item name="android:textColor">@color/black_55</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MSV_SelectFilterTextSectionName" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_55</item>
+    </style>
+
+    <style name="MSV_SelectFilterTextFilterName" >
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_85</item>
+    </style>
+</resources>

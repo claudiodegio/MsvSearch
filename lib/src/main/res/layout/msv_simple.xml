@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_top_bar"
+    android:layout_width="match_parent"
+    android:background="@color/whitePrimary"
+    android:layout_height="?attr/actionBarSize">
+
+    <EditText
+        android:id="@+id/ed_search_text"
+        style="@style/MSV_SearchBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:hint="@string/msv_search_hint"
+        android:paddingLeft="@dimen/msv_text_padding"
+        android:paddingRight="@dimen/msv_text_padding" />
+
+    <ImageButton
+        android:id="@+id/bt_back"
+        style="@style/MSV_Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/msv_icon_padding"
+        android:paddingRight="@dimen/msv_icon_padding"
+        android:src="@drawable/ic_keyboard_backspace_black_36dp"/>
+
+    <ImageButton
+        android:id="@+id/bt_clear"
+        style="@style/MSV_Icon"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_close_grey600_24dp"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:backgroundTint="#10000000"/>
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="msv_select_filter_left_margin">64dp</dimen>
+    <dimen name="msv_select_filter_text_left_margin">120dip</dimen>
+</resources>

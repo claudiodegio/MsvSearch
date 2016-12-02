@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="msv_horizontal_margin">8dip</dimen>
+
+
+    <dimen name="msv_icon_padding">12dp</dimen>
+    <dimen name="msv_text_padding">65dp</dimen>
+
+    <!-- Dimensioni sezione filtro -->
+    <dimen name="msv_filter_height">32dip</dimen>
+    <dimen name="msv_filter_margin">2dip</dimen>
+    <dimen name="msv_filter_rv_padding">2dip</dimen>
+    <dimen name="msv_filter_rv_height">40dip</dimen>
+    <dimen name="msv_filter_close_button_horizontal_margin">4dip</dimen>
+
+
+    <dimen name="msv_select_filter_left_margin">16dp</dimen>
+    <dimen name="msv_select_filter_icon_padding">12dip</dimen>
+    <dimen name="msv_select_filter_text_left_margin">72dip</dimen>
+    <dimen name="msv_select_filter_icon_size">36dip</dimen>
+    <dimen name="msv_select_filter_section_height">48dip</dimen>
+    <dimen name="msv_select_filter_my_filter_height">48dip</dimen>
+
+</resources>

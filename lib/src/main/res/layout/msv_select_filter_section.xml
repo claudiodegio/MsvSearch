@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/msv_select_filter_section_height"
+    android:paddingLeft="@dimen/msv_select_filter_left_margin"
+    android:gravity="center_vertical"
+    style="@style/MSV_SelectFilterTextSectionName"
+    tools:text="Header" />
