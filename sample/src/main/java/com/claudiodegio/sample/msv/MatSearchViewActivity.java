@@ -33,7 +33,7 @@ public class MatSearchViewActivity extends BaseMatSearchViewActivity implements 
     @Override
     public boolean onQueryTextSubmit(String query) {
         Toast.makeText(this, "onQueryTextSubmit: " + query, Toast.LENGTH_SHORT).show();
-        return true;
+        return false;
     }
 
     @Override

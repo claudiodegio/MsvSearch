@@ -1,6 +1,8 @@
 package com.claudiodegio.sample.msv;
 
 
+import android.widget.Toast;
+
 import com.claudiodegio.msv.BaseMaterialSearchView;
 import com.claudiodegio.msv.SuggestionMaterialSearchView;
 
@@ -13,15 +15,11 @@ public class MatSearchViewSuggestionActivity extends BaseMatSearchViewActivity i
 
         String[] arrays = getResources().getStringArray(R.array.query_suggestions);
 
-      /*  SuggestionMaterialSearchView cast = LangUtil.cast(mSearchView);
-
+        SuggestionMaterialSearchView cast = (SuggestionMaterialSearchView)mSearchView;
 
         cast.setSuggestion(arrays);
 
-       // cast.showSuggestion();
-
-        mSearchView.setOnSearchViewListener(this);*/
-
+        mSearchView.setOnSearchViewListener(this);
     }
 
     @Override
@@ -32,20 +30,23 @@ public class MatSearchViewSuggestionActivity extends BaseMatSearchViewActivity i
     @Override
     public void onSearchViewShown() {
 
+        Toast.makeText(this, "onSearchViewShown", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onSearchViewClosed() {
 
+        Toast.makeText(this, "onSearchViewClosed", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        Toast.makeText(this, "onQueryTextSubmit: " + query, Toast.LENGTH_SHORT).show();
         return true;
     }
 
     @Override
     public void onQueryTextChange(String newText) {
-
+        Toast.makeText(this, "onQueryTextChange: " + newText, Toast.LENGTH_SHORT).show();
     }
 }

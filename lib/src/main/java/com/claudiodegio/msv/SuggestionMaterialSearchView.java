@@ -106,7 +106,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
         String suggestion = ((SearchSuggestRvAdapter)mSuggestsAdapter).getItem(position);
         mIgnoreNextTextChange = true;
         setQuery(suggestion, true);
-        mETSearchText.setSelection(suggestion.length());
+        if (mETSearchText.getText().length() > 0) {
+            mETSearchText.setSelection(mETSearchText.getText().toString().length());
+        }
         mIgnoreNextTextChange = false;
         hideSuggestion();
         mVOverlay.setVisibility(GONE);
