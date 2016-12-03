@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/search_top_bar"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         android:background="@android:color/white">
         <EditText
             android:id="@+id/ed_search_text"
@@ -39,6 +39,7 @@
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/msv_horizontal_margin"
             android:src="@drawable/ic_close_grey600_24dp"
             android:visibility="gone"/>
 
@@ -53,7 +54,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginTop="?android:attr/actionBarSize"
         android:orientation="vertical">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_filter"
@@ -82,7 +83,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_select_filter"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/whitePrimary"

@@ -14,6 +14,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MatSearchViewActivity"
+            android:label="Msv Simple"
+            android:theme="@style/AppTheme.NoActionBarColored"/>
+
+        <activity android:name=".MatSearchViewSuggestionActivity"
+            android:label="Msv Suggestion"
+            android:theme="@style/AppTheme.NoActionBarColored"/>
+
+        <activity android:name=".MatSearchViewFilterActivity"
+            android:label="Msv Filter"
+            android:theme="@style/AppTheme.NoActionBarColored"/>
+
+        <activity android:name=".ThemedMatSearchViewActivity"
+            android:label="Msv Themed"
+            android:theme="@style/AppTheme.NoActionBarColored"/>
     </application>
 
 </manifest>

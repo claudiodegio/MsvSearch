@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/search_top_bar"
     android:layout_width="match_parent"
-    android:background="@color/whitePrimary"
-    android:layout_height="?attr/actionBarSize">
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/whitePrimary">
 
     <EditText
         android:id="@+id/ed_search_text"
@@ -26,17 +26,19 @@
         android:layout_centerVertical="true"
         android:paddingLeft="@dimen/msv_icon_padding"
         android:paddingRight="@dimen/msv_icon_padding"
-        android:src="@drawable/ic_keyboard_backspace_black_36dp"/>
+        android:src="@drawable/ic_keyboard_backspace_grey600_24dp"/>
 
     <ImageButton
         android:id="@+id/bt_clear"
         style="@style/MSV_Icon"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/msv_horizontal_margin"
         android:src="@drawable/ic_close_grey600_24dp"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        tools:visibility="visible"/>
 
     <View
         android:layout_width="match_parent"
