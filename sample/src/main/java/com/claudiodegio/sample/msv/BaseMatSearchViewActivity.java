@@ -57,7 +57,8 @@ public abstract class BaseMatSearchViewActivity extends AppCompatActivity {
     public int getLayoutId() {
         return R.layout.test_msv_simple;
     }
-    private void init(){
+
+    protected void init(){
         final RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
         mRvItem.setLayoutManager(layoutManager);

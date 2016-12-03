@@ -27,5 +27,5 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/msv_filter_close_button_horizontal_margin"
         android:layout_marginLeft="@dimen/msv_filter_close_button_horizontal_margin"
-        android:src="@drawable/ic_close_grey600_24dp"/>
+        android:src="@drawable/ic_close_circle_grey600_24dp"/>
 </LinearLayout>

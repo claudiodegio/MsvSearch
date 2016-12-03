@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <color name='color_cat_duck'>#408cfb</color>
+  <color name='color_cat_elephant'>#726a5b</color>
+  <color name='color_cat_forest'>#8b54c3</color>
+  <color name='color_cat_frog'>#b0094b</color>
+  <color name='color_cat_mountain'>#6350c7</color>
+  <color name='color_cat_tent'>#3966eb</color>
+  <color name='color_dark_cat_duck'>#0e6efa</color>
+  <color name='color_dark_cat_elephant'>#565044</color>
+  <color name='color_dark_cat_forest'>#723ba9</color>
+  <color name='color_dark_cat_frog'>#7f0736</color>
+  <color name='color_dark_cat_mountain'>#4a37ad</color>
+  <color name='color_dark_cat_tent'>#1648db</color>
+</resources>

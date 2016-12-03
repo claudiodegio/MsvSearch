@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <array name='cat_avatar'>
+    <item>@drawable/cat_duck_48dp</item>
+    <item>@drawable/cat_elephant_48dp</item>
+    <item>@drawable/cat_forest_48dp</item>
+    <item>@drawable/cat_frog_48dp</item>
+    <item>@drawable/cat_mountain_48dp</item>
+    <item>@drawable/cat_tent_48dp</item>
+  </array>
+  <array name='cat_big'>
+    <item>@drawable/cat_duck_100dp</item>
+    <item>@drawable/cat_elephant_100dp</item>
+    <item>@drawable/cat_forest_100dp</item>
+    <item>@drawable/cat_frog_100dp</item>
+    <item>@drawable/cat_mountain_100dp</item>
+    <item>@drawable/cat_tent_100dp</item>
+  </array>
+  <array name='cat_color'>
+    <item>@color/color_cat_duck</item>
+    <item>@color/color_cat_elephant</item>
+    <item>@color/color_cat_forest</item>
+    <item>@color/color_cat_frog</item>
+    <item>@color/color_cat_mountain</item>
+    <item>@color/color_cat_tent</item>
+  </array>
+  <array name='cat_color_dark'>
+    <item>@color/color_dark_cat_duck</item>
+    <item>@color/color_dark_cat_elephant</item>
+    <item>@color/color_dark_cat_forest</item>
+    <item>@color/color_dark_cat_frog</item>
+    <item>@color/color_dark_cat_mountain</item>
+    <item>@color/color_dark_cat_tent</item>
+  </array>
+</resources>

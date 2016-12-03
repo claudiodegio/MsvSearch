@@ -37,7 +37,9 @@
         android:elevation="5dip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
->
-    </com.claudiodegio.msv.MaterialSearchView>
+        app:searchBackgroud="@color/yellow"
+        app:hint="My Hint"
+        app:textColor="@color/red"
+        app:textColorHint="@color/black_85"/>
 
 </android.support.design.widget.CoordinatorLayout>
