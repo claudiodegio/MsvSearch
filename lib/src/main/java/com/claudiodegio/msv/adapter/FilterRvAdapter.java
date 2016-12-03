@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 import com.claudiodegio.msv.R;
-import com.claudiodegio.msv.model.MyFilter;
+import com.claudiodegio.msv.model.Filter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
 
     private Context mCtx;
     private LayoutInflater mInflater;
-    private List<MyFilter> mList;
+    private List<Filter> mList;
 
     public FilterRvAdapter(Context context){
         this.mCtx = context;
@@ -48,10 +48,10 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         return holder;
     }
 
-    public void addFilter(MyFilter mFilter) {
+    public void addFilter(Filter mFilter) {
 
         for (int i = 0; i < mList.size(); ++i) {
-            MyFilter filter = mList.get(i);
+            Filter filter = mList.get(i);
 
             if (filter.getType() == mFilter.getType()) {
                 mList.set(i, mFilter);
@@ -69,22 +69,22 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         notifyDataSetChanged();
     }
 
-    public MyFilter getItem(int position) {
+    public Filter getItem(int position) {
         return mList.get(position);
     }
 
-    public MyFilter removeFilter(int position) {
-        MyFilter filter = mList.remove(position);
+    public Filter removeFilter(int position) {
+        Filter filter = mList.remove(position);
         notifyItemRemoved(position);
         return filter;
     }
 
-    public void setFilters(List<MyFilter> list){
+    public void setFilters(List<Filter> list){
         mList = list;
         notifyDataSetChanged();
     }
 
-    public List<MyFilter> getFilters(){
+    public List<Filter> getFilters(){
         return mList;
     }
     @Override
@@ -103,7 +103,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
     @Override
     public int getItemViewType(int position) {
 
-        MyFilter filter = mList.get(position);
+        Filter filter = mList.get(position);
 
         if (filter.getIconBgColor() == View.NO_ID){
             return 0;
@@ -119,7 +119,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
             mTextView = (TextView) itemView.findViewById(android.R.id.text1);
         }
 
-        public void bind(MyFilter filter) {
+        public void bind(Filter filter) {
             mTextView.setText(filter.getName());
         }
     }
@@ -133,7 +133,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         }
 
         @Override
-        public void bind(MyFilter filter) {
+        public void bind(Filter filter) {
             super.bind(filter);
 
             mIv.setImageResource(filter.getIconRefId());
@@ -150,7 +150,7 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         }
 
         @Override
-        public void bind(MyFilter filter) {
+        public void bind(Filter filter) {
             super.bind(filter);
             mCIV.setImageResource(filter.getIconRefId());
             mCIV.setFillColor(filter.getIconBgColor());

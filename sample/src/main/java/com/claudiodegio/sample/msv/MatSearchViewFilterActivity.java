@@ -1,25 +1,19 @@
 package com.claudiodegio.sample.msv;
 
-import android.provider.SyncStateContract;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.claudiodegio.msv.BaseMaterialSearchView;
 import com.claudiodegio.msv.FilterMaterialSearchView;
-import com.claudiodegio.msv.model.MyFilter;
+import com.claudiodegio.msv.OnFilterViewListener;
+import com.claudiodegio.msv.OnSearchViewListener;
+import com.claudiodegio.msv.model.Filter;
 import com.claudiodegio.msv.model.Section;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MatSearchViewFilterActivity extends BaseMatSearchViewActivity implements BaseMaterialSearchView.OnSearchViewListener, FilterMaterialSearchView.OnFilterViewListener {
+public class MatSearchViewFilterActivity extends BaseMatSearchViewActivity implements OnSearchViewListener, OnFilterViewListener {
 
     @Override
     protected void initCustom() {
@@ -32,26 +26,26 @@ public class MatSearchViewFilterActivity extends BaseMatSearchViewActivity imple
 
         cast.addSection(section);
 
-        MyFilter filter = new MyFilter(1, "Duck", 0, R.drawable.cat_duck_48dp, getResources().getColor(R.color.color_cat_duck));
+        Filter filter = new Filter(1, "Duck", 0, R.drawable.cat_duck_48dp, getResources().getColor(R.color.color_cat_duck));
         cast.addFilter(filter);
 
-        filter = new MyFilter(1, "Elephant", 0, R.drawable.cat_elephant_48dp,getResources().getColor(R.color.color_cat_elephant));
+        filter = new Filter(1, "Elephant", 0, R.drawable.cat_elephant_48dp,getResources().getColor(R.color.color_cat_elephant));
         cast.addFilter(filter);
 
-        filter = new MyFilter(1, "Frog", 0, R.drawable.cat_frog_48dp,getResources().getColor(R.color.color_cat_frog));
+        filter = new Filter(1, "Frog", 0, R.drawable.cat_frog_48dp,getResources().getColor(R.color.color_cat_frog));
         cast.addFilter(filter);
 
         section = new Section("Outdoor");
 
         cast.addSection(section);
 
-        filter = new MyFilter(2, "Forest", 1, R.drawable.cat_forest_48dp, getResources().getColor(R.color.color_cat_forest));
+        filter = new Filter(2, "Forest", 1, R.drawable.cat_forest_48dp, getResources().getColor(R.color.color_cat_forest));
         cast.addFilter(filter);
 
-        filter = new MyFilter(2, "Mountain", 1, R.drawable.cat_mountain_48dp,getResources().getColor(R.color.color_cat_mountain));
+        filter = new Filter(2, "Mountain", 1, R.drawable.cat_mountain_48dp,getResources().getColor(R.color.color_cat_mountain));
         cast.addFilter(filter);
 
-        filter = new MyFilter(2, "Tent", 1, R.drawable.cat_tent_48dp,getResources().getColor(R.color.color_cat_tent));
+        filter = new Filter(2, "Tent", 1, R.drawable.cat_tent_48dp,getResources().getColor(R.color.color_cat_tent));
         cast.addFilter(filter);
 
         cast.setOnFilterViewListener(this);
@@ -83,20 +77,20 @@ public class MatSearchViewFilterActivity extends BaseMatSearchViewActivity imple
     }
 
     @Override
-    public void onFilterAdded(MyFilter filter) {
+    public void onFilterAdded(Filter filter) {
 
         Log.d("TAG", "onFilterAdded:" + filter.getName());
 
     }
 
     @Override
-    public void onFilterRemoved(MyFilter filter) {
+    public void onFilterRemoved(Filter filter) {
         Log.d("TAG", "onFilterRemoved:" + filter.getName());
 
     }
 
     @Override
-    public void onFilterChanged(List<MyFilter> list) {
+    public void onFilterChanged(List<Filter> list) {
         Log.d("TAG", "onFilterChanged:" + list.size());
 
     }

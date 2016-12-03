@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="MyMaterialSearchView">
+    <declare-styleable name="Msv">
         <attr name="searchBackgroud" format="reference" />
         <attr name="hint" format="string"/>
         <attr name="textColor" format="color"/>

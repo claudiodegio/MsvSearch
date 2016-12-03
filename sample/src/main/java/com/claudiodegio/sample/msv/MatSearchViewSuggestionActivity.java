@@ -4,9 +4,10 @@ package com.claudiodegio.sample.msv;
 import android.widget.Toast;
 
 import com.claudiodegio.msv.BaseMaterialSearchView;
+import com.claudiodegio.msv.OnSearchViewListener;
 import com.claudiodegio.msv.SuggestionMaterialSearchView;
 
-public class MatSearchViewSuggestionActivity extends BaseMatSearchViewActivity implements BaseMaterialSearchView.OnSearchViewListener {
+public class MatSearchViewSuggestionActivity extends BaseMatSearchViewActivity implements OnSearchViewListener {
 
 
     @Override

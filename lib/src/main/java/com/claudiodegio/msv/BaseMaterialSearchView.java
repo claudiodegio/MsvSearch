@@ -50,23 +50,23 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
     }
 
     private void initStyle(AttributeSet attrs, int defStyleAttr) {
-        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyMaterialSearchView, defStyleAttr, 0);
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Msv, defStyleAttr, 0);
 
         if (a != null) {
-            if (a.hasValue(R.styleable.MyMaterialSearchView_searchBackgroud)) {
-                setBackground(a.getDrawable(R.styleable.MyMaterialSearchView_searchBackgroud));
+            if (a.hasValue(R.styleable.Msv_searchBackgroud)) {
+                setBackground(a.getDrawable(R.styleable.Msv_searchBackgroud));
             }
 
-            if (a.hasValue(R.styleable.MyMaterialSearchView_hint)) {
-                mETSearchText.setHint(a.getString(R.styleable.MyMaterialSearchView_hint));
+            if (a.hasValue(R.styleable.Msv_hint)) {
+                mETSearchText.setHint(a.getString(R.styleable.Msv_hint));
             }
 
-            if (a.hasValue(R.styleable.MyMaterialSearchView_textColor)) {
-                mETSearchText.setTextColor(a.getColor(R.styleable.MyMaterialSearchView_textColor, defStyleAttr));
+            if (a.hasValue(R.styleable.Msv_textColor)) {
+                mETSearchText.setTextColor(a.getColor(R.styleable.Msv_textColor, defStyleAttr));
             }
 
-            if (a.hasValue(R.styleable.MyMaterialSearchView_textColorHint)) {
-                mETSearchText.setHintTextColor(a.getColor(R.styleable.MyMaterialSearchView_textColorHint, defStyleAttr));
+            if (a.hasValue(R.styleable.Msv_textColorHint)) {
+                mETSearchText.setHintTextColor(a.getColor(R.styleable.Msv_textColorHint, defStyleAttr));
             }
 
             a.recycle();
@@ -271,16 +271,6 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
 
     public void setOnSearchViewListener(OnSearchViewListener mListener) {
         this.mListener = mListener;
-    }
-
-    public interface OnSearchViewListener {
-        void onSearchViewShown();
-
-        void onSearchViewClosed();
-
-        boolean onQueryTextSubmit(String query);
-
-        void onQueryTextChange(String newText);
     }
 
     @Override

@@ -12,8 +12,7 @@
         android:id="@+id/iv_icon"
         android:layout_width="@dimen/msv_filter_height"
         android:layout_height="@dimen/msv_filter_height"
-        android:scaleType="center"
-        android:src="@drawable/ic_close_grey600_36dp"/>
+        android:scaleType="center" />
 
     <TextView
         android:id="@android:id/text1"

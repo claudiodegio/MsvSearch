@@ -4,7 +4,7 @@ package com.claudiodegio.msv.model;
  * Created by claud on 02/11/2016.
  */
 
-public class BaseElement {
+public abstract class BaseElement {
 
     private String mName;
 

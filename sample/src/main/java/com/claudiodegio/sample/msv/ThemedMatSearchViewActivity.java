@@ -3,9 +3,10 @@ package com.claudiodegio.sample.msv;
 import android.util.Log;
 
 import com.claudiodegio.msv.BaseMaterialSearchView;
+import com.claudiodegio.msv.OnSearchViewListener;
 
 
-public class ThemedMatSearchViewActivity extends BaseMatSearchViewActivity implements BaseMaterialSearchView.OnSearchViewListener {
+public class ThemedMatSearchViewActivity extends BaseMatSearchViewActivity implements OnSearchViewListener {
 
 
     @Override

@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 
 import com.claudiodegio.msv.R;
 import com.claudiodegio.msv.model.BaseElement;
-import com.claudiodegio.msv.model.MyFilter;
+import com.claudiodegio.msv.model.Filter;
 import com.claudiodegio.msv.model.Section;
 
 import java.util.ArrayList;
@@ -102,12 +101,12 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
     }
 
     @Override
-    public Filter getFilter() {
+    public android.widget.Filter getFilter() {
         return new SelectFilter();
     }
 
 
-    class SelectFilter extends Filter {
+    class SelectFilter extends android.widget.Filter {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             if (mList == null) {
@@ -123,7 +122,7 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
                 filteredList = new ArrayList<>();
                 for (BaseElement filter : mList) {
 
-                    if (filter instanceof MyFilter) {
+                    if (filter instanceof Filter) {
                         if (filter.getName().toLowerCase().startsWith(charSequence.toString().toLowerCase())) {
                             if (sezione != null) {
                                 filteredList.add(sezione);
@@ -179,7 +178,7 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
         public void bind(BaseElement element) {
             mTextView.setText(element.getName());
 
-            MyFilter filter = (MyFilter)element;
+            Filter filter = (Filter)element;
 
             // Colore
             int color = filter.getIconBgColor();

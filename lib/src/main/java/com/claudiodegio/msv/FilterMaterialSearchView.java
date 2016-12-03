@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.claudiodegio.msv.adapter.FilterRvAdapter;
 import com.claudiodegio.msv.adapter.SelectFilterRvAdapter;
 import com.claudiodegio.msv.model.BaseElement;
-import com.claudiodegio.msv.model.MyFilter;
+import com.claudiodegio.msv.model.Filter;
 import com.claudiodegio.msv.model.Section;
 import com.claudiodegio.msv.recycleview.RecyclerItemClickListener;
 
@@ -54,7 +54,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
         mSelectFilterRvAdapter.addElement(section);
     }
 
-    public void addFilter(MyFilter filter) {
+    public void addFilter(Filter filter) {
         mSelectFilterRvAdapter.addElement(filter);
     }
 
@@ -62,7 +62,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
         mSelectFilterRvAdapter.swapList(list);
     }
 
-    public List<MyFilter> getFilter(){
+    public List<Filter> getFilter(){
         return mFilterRvAdapter.getFilters();
     }
 
@@ -123,7 +123,6 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
         super.showSearch(animate);
         showSelectFilter();
         mFilterRvAdapter.clear();
-       // startFilter("");
     }
 
     @Override
@@ -179,18 +178,18 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
         if (rv == mRvSelectFilter) {
             BaseElement element = mSelectFilterRvAdapter.getItem(position);
 
-            if (element instanceof MyFilter) {
-                mFilterRvAdapter.addFilter((MyFilter) element);
+            if (element instanceof Filter) {
+                mFilterRvAdapter.addFilter((Filter) element);
                 hideSelectFilter();
                 hideKeyboard(mETSearchText);
                 mETSearchText.setText(null);
 
                 if (mOnFilterViewListener != null) {
-                    mOnFilterViewListener.onFilterAdded((MyFilter) element);
+                    mOnFilterViewListener.onFilterAdded((Filter) element);
                 }
             }
         } else {
-            final MyFilter filter = mFilterRvAdapter.removeFilter(position);
+            final Filter filter = mFilterRvAdapter.removeFilter(position);
 
 
             if (mFilterRvAdapter.getItemCount() == 0) {
@@ -198,7 +197,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
             }
 
             if (mOnFilterViewListener != null) {
-                mOnFilterViewListener.onFilterRemoved((MyFilter) filter);
+                mOnFilterViewListener.onFilterRemoved((Filter) filter);
             }
         }
 
@@ -217,15 +216,6 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
 
         startFilter(charSequence.toString());
     }
-
-    public interface OnFilterViewListener {
-        void onFilterAdded(MyFilter filter);
-
-        void onFilterRemoved(MyFilter filter);
-
-        void onFilterChanged(List<MyFilter> list);
-    }
-
 
     public void setOnFilterViewListener(OnFilterViewListener mOnFilterViewListener) {
         this.mOnFilterViewListener = mOnFilterViewListener;
@@ -266,7 +256,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
     class FilterMSVSavedState extends View.BaseSavedState {
 
         public boolean isFilterSelectOpen;
-        public List<MyFilter> filters;
+        public List<Filter> filters;
 
         public FilterMSVSavedState(Parcelable superState) {
             super(superState);
