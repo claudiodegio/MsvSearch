@@ -24,12 +24,18 @@ public class SearchSuggestRvAdapter extends RecyclerView.Adapter<SearchSuggestRv
     private List<String> mSuggestionsFiltered;
 
     private LayoutInflater mInflater;
+    private Boolean isContain;
 
-    public SearchSuggestRvAdapter(Context context, List<String> suggestions){
+    public SearchSuggestRvAdapter(Context context, List<String> suggestions, Boolean isContain){
         this.mCtx = context;
         this.mSuggestionsFiltered = suggestions;
         this.mSuggestions = suggestions;
         this.mInflater = LayoutInflater.from(context);
+        this.isContain = isContain;
+    }
+
+    public SearchSuggestRvAdapter(Context context, List<String> suggestions){
+        this(context, suggestions, false);
     }
 
     @Override
@@ -68,9 +74,16 @@ public class SearchSuggestRvAdapter extends RecyclerView.Adapter<SearchSuggestRv
                     List<String> searchData = new ArrayList<>();
 
                     for (String string : mSuggestions) {
-                        if (string.toLowerCase().startsWith(constraint.toString().toLowerCase())) {
-                            searchData.add(string);
+                        if (isContain) {
+                            if (string.toLowerCase().contains(constraint.toString().toLowerCase())) {
+                                searchData.add(string);
+                            }
+                        } else {
+                            if (string.toLowerCase().startsWith(constraint.toString().toLowerCase())) {
+                                searchData.add(string);
+                            }
                         }
+
                     }
 
                     // Assign the data to the FilterResults
