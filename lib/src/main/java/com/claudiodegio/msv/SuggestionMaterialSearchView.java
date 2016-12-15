@@ -56,14 +56,22 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     }
 
     public void setSuggestion(String[] suggestions) {
+        setSuggestion(suggestions, false);
+    }
+
+    public void setSuggestion(String[] suggestions, Boolean isContain) {
         if (suggestions != null) {
-            setSuggestion(Arrays.asList(suggestions));
+            setSuggestion(Arrays.asList(suggestions), isContain);
         }
     }
 
     public void setSuggestion(List<String> suggestions) {
+      setSuggestion(suggestions, false);
+    }
+
+    public void setSuggestion(List<String> suggestions, Boolean isContain) {
         if (suggestions != null && !suggestions.isEmpty()) {
-            final SearchSuggestRvAdapter adapter = new SearchSuggestRvAdapter(getContext(), suggestions);
+            final SearchSuggestRvAdapter adapter = new SearchSuggestRvAdapter(getContext(), suggestions, isContain);
 
             setSuggestAdapter(adapter);
         }
