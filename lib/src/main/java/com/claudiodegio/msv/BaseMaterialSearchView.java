@@ -53,20 +53,20 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
         final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Msv, defStyleAttr, 0);
 
         if (a != null) {
-            if (a.hasValue(R.styleable.Msv_searchBackgroud)) {
-                setBackground(a.getDrawable(R.styleable.Msv_searchBackgroud));
+            if (a.hasValue(R.styleable.Msv_msvSearchBackgroud)) {
+                setBackground(a.getDrawable(R.styleable.Msv_msvSearchBackgroud));
             }
 
-            if (a.hasValue(R.styleable.Msv_hint)) {
-                mETSearchText.setHint(a.getString(R.styleable.Msv_hint));
+            if (a.hasValue(R.styleable.Msv_msvHint)) {
+                mETSearchText.setHint(a.getString(R.styleable.Msv_msvHint));
             }
 
-            if (a.hasValue(R.styleable.Msv_textColor)) {
-                mETSearchText.setTextColor(a.getColor(R.styleable.Msv_textColor, defStyleAttr));
+            if (a.hasValue(R.styleable.Msv_msvTextColor)) {
+                mETSearchText.setTextColor(a.getColor(R.styleable.Msv_msvTextColor, defStyleAttr));
             }
 
-            if (a.hasValue(R.styleable.Msv_textColorHint)) {
-                mETSearchText.setHintTextColor(a.getColor(R.styleable.Msv_textColorHint, defStyleAttr));
+            if (a.hasValue(R.styleable.Msv_msvTextColorHint)) {
+                mETSearchText.setHintTextColor(a.getColor(R.styleable.Msv_msvTextColorHint, defStyleAttr));
             }
 
             a.recycle();
