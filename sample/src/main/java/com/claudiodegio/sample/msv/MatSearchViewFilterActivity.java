@@ -45,7 +45,7 @@ public class MatSearchViewFilterActivity extends BaseMatSearchViewActivity imple
         filter = new Filter(2, "Mountain", 1, R.drawable.cat_mountain_48dp,getResources().getColor(R.color.color_cat_mountain));
         cast.addFilter(filter);
 
-        filter = new Filter(2, "Tent", 1, R.drawable.cat_tent_48dp,getResources().getColor(R.color.color_cat_tent));
+        filter = new Filter(2, "Tent", 1, getResources().getDrawable(R.drawable.cat_tent_48dp), getResources().getColor(R.color.color_cat_tent));
         cast.addFilter(filter);
 
         cast.setOnFilterViewListener(this);

@@ -136,7 +136,11 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         public void bind(Filter filter) {
             super.bind(filter);
 
-            mIv.setImageResource(filter.getIconRefId());
+           if (filter.hasIconRefId()) {
+               mIv.setImageResource(filter.getIconRefId());
+           } else {
+               mIv.setImageDrawable(filter.getIconDrawable());
+           }
         }
     }
 
@@ -152,7 +156,11 @@ public class FilterRvAdapter extends RecyclerView.Adapter<FilterRvAdapter.BaseVi
         @Override
         public void bind(Filter filter) {
             super.bind(filter);
-            mCIV.setImageResource(filter.getIconRefId());
+            if (filter.hasIconRefId()) {
+                mCIV.setImageResource(filter.getIconRefId());
+            } else {
+                mCIV.setImageDrawable(filter.getIconDrawable());
+            }
             mCIV.setFillColor(filter.getIconBgColor());
         }
     }

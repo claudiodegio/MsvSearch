@@ -189,12 +189,20 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
                 mCiv.setVisibility(View.VISIBLE);
 
                 mCiv.setFillColor(color);
-                mCiv.setImageResource(filter.getIconRefId());
+                if (filter.hasIconRefId()) {
+                    mCiv.setImageResource(filter.getIconRefId());
+                } else {
+                    mCiv.setImageDrawable(filter.getIconDrawable());
+                }
             } else {
                 mIv.setVisibility(View.VISIBLE);
                 mCiv.setVisibility(View.GONE);
 
-                mIv.setImageResource(filter.getIconRefId());
+                if (filter.hasIconRefId()) {
+                    mIv.setImageResource(filter.getIconRefId());
+                } else {
+                    mIv.setImageDrawable(filter.getIconDrawable());
+                }
             }
         }
     }
