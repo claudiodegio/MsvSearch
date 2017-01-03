@@ -31,6 +31,7 @@
         android:id="@+id/sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:msvIsContainEnabled="false"
         android:elevation="5dip">
     </com.claudiodegio.msv.FilterMaterialSearchView>
 

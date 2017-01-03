@@ -2,6 +2,7 @@ package com.claudiodegio.msv;
 
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Parcelable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +32,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
     private FilterRvAdapter mFilterRvAdapter;
     private OnFilterViewListener mOnFilterViewListener;
     private TextView mTvNoFilter;
+    private boolean isContainFilter;
 
     public FilterMaterialSearchView(Context context) {
         super(context, null);
@@ -42,6 +44,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
 
     public FilterMaterialSearchView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initStyle(attrs, defStyleAttr);
         initView();
     }
 
@@ -75,7 +78,7 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
         mRvSelectFilter = (RecyclerView) findViewById(R.id.rv_select_filter);
         mTvNoFilter = (TextView)  findViewById(R.id.tv_no_filter);
 
-        mSelectFilterRvAdapter = new SelectFilterRvAdapter(getContext());
+        mSelectFilterRvAdapter = new SelectFilterRvAdapter(getContext(), isContainFilter);
         mRvSelectFilter.setHasFixedSize(false);
         mRvSelectFilter.setAdapter(mSelectFilterRvAdapter);
         mRvSelectFilter.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), this));
@@ -260,6 +263,18 @@ public class FilterMaterialSearchView extends BaseMaterialSearchView implements 
 
         public FilterMSVSavedState(Parcelable superState) {
             super(superState);
+        }
+    }
+
+    private void initStyle(AttributeSet attrs, int defStyleAttr) {
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Msv, defStyleAttr, 0);
+
+        if (a != null) {
+            if (a.hasValue(R.styleable.Msv_msvIsContainEnabled)) {
+                isContainFilter = a.getBoolean(R.styleable.Msv_msvIsContainEnabled, false);
+            }
+
+            a.recycle();
         }
     }
 }

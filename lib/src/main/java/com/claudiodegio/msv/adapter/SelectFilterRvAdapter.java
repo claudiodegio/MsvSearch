@@ -25,16 +25,18 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
 
     private List<BaseElement> mList;
     private List<BaseElement> mListFiltered;
+    private boolean isContain;
 
     private Context mCtx;
     private LayoutInflater mInflater;
 
-    public SelectFilterRvAdapter(Context context){
+    public SelectFilterRvAdapter(Context context, boolean isContain){
         this.mCtx = context;
         this.mInflater = LayoutInflater.from(context);
         mList = new ArrayList<>();
         mListFiltered = mList;
         setHasStableIds(false);
+        this.isContain = isContain;
     }
 
     public void addElement(BaseElement element) {
@@ -123,7 +125,11 @@ public class SelectFilterRvAdapter extends RecyclerView.Adapter<SelectFilterRvAd
                 for (BaseElement filter : mList) {
 
                     if (filter instanceof Filter) {
-                        if (filter.getName().toLowerCase().startsWith(charSequence.toString().toLowerCase())) {
+                        final String charSequenceLowerCase = charSequence.toString().toLowerCase();
+                        final String filterNameLowerCase = filter.getName().toLowerCase();
+
+                        if ((!isContain && filterNameLowerCase.startsWith(charSequenceLowerCase))
+                                || isContain && filterNameLowerCase.contains(charSequenceLowerCase)) {
                             if (sezione != null) {
                                 filteredList.add(sezione);
                                 sezione = null;
