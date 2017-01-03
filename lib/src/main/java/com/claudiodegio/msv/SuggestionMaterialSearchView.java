@@ -111,12 +111,17 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     public void onItemClick(RecyclerView rv, View view, int position) {
         Log.d(TAG, "onItemClick: " + position);
 
-        String suggestion = ((SearchSuggestRvAdapter)mSuggestsAdapter).getItem(position);
         mIgnoreNextTextChange = true;
-        setQuery(suggestion, true);
-        if (mETSearchText.getText().length() > 0) {
-            mETSearchText.setSelection(mETSearchText.getText().toString().length());
+
+        if (mSuggestsAdapter instanceof SearchSuggestRvAdapter) {
+
+            String suggestion = ((SearchSuggestRvAdapter) mSuggestsAdapter).getItem(position);
+            setQuery(suggestion, true);
+            if (mETSearchText.getText().length() > 0) {
+                mETSearchText.setSelection(mETSearchText.getText().toString().length());
+            }
         }
+
         mIgnoreNextTextChange = false;
         hideSuggestion();
         mVOverlay.setVisibility(GONE);
