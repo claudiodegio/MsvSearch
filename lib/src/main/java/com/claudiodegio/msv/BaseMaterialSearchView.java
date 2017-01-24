@@ -53,8 +53,8 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
         final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Msv, defStyleAttr, 0);
 
         if (a != null) {
-            if (a.hasValue(R.styleable.Msv_msvSearchBackgroud)) {
-                setBackground(a.getDrawable(R.styleable.Msv_msvSearchBackgroud));
+            if (a.hasValue(R.styleable.Msv_msvSearchBackground)) {
+                setBackground(a.getDrawable(R.styleable.Msv_msvSearchBackground));
             }
 
             if (a.hasValue(R.styleable.Msv_msvHint)) {

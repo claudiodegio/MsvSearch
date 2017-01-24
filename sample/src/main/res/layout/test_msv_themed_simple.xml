@@ -37,7 +37,7 @@
         android:elevation="5dip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:msvSearchBackgroud="@color/yellow"
+        app:msvSearchBackground="@color/yellow"
         app:msvHint="My Hint"
         app:msvTextColor="@color/red"
         app:msvTextColorHint="@color/black_85"/>

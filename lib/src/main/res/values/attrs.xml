@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="Msv">
-        <attr name="msvSearchBackgroud" format="reference" />
+        <attr name="msvSearchBackground" format="reference" />
         <attr name="msvHint" format="string"/>
         <attr name="msvTextColor" format="color"/>
         <attr name="msvTextColorHint" format="color"/>
