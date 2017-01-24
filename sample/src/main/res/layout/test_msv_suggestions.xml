@@ -30,6 +30,7 @@
     <com.claudiodegio.msv.SuggestionMaterialSearchView
         android:id="@+id/sv"
         android:elevation="5dip"
+        app:msvHideShadow="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </com.claudiodegio.msv.SuggestionMaterialSearchView>

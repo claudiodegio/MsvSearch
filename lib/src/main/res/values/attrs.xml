@@ -7,6 +7,7 @@
         <attr name="msvTextColor" format="color"/>
         <attr name="msvTextColorHint" format="color"/>
         <attr name="msvIsContainEnabled" format="boolean" />
+        <attr name="msvHideShadow" format="boolean" />
     </declare-styleable>
 
 </resources>

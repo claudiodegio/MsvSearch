@@ -1,6 +1,7 @@
 package com.claudiodegio.msv;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -19,6 +20,7 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     private RecyclerView mRvSuggestion;
     private View mVOverlay;
     private RecyclerView.Adapter mSuggestsAdapter;
+    private boolean hideShadow = false;
 
     public SuggestionMaterialSearchView(Context context) {
         this(context, null);
@@ -31,6 +33,8 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     public SuggestionMaterialSearchView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
+        initStyle(attrs, defStyleAttr);
+
         initView();
     }
 
@@ -41,6 +45,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
         mVOverlay.setOnClickListener(this);
         mRvSuggestion.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), this));
 
+        if (hideShadow) {
+            mVOverlay.setVisibility(GONE);
+        }
     }
 
     @Override
@@ -52,7 +59,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     public void showSearch(boolean animate) {
         super.showSearch(animate);
         showKeyboard(mETSearchText);
-        mVOverlay.setVisibility(VISIBLE);
+        if (!hideShadow) {
+            mVOverlay.setVisibility(VISIBLE);
+        }
     }
 
     public void setSuggestion(String[] suggestions) {
@@ -82,7 +91,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
         super.onTextChanged(charSequence, i, i1, i2);
 
         if (!mIgnoreNextTextChange) {
-            mVOverlay.setVisibility(VISIBLE);
+            if (!hideShadow) {
+                mVOverlay.setVisibility(VISIBLE);
+            }
             startFilter(mETSearchText.getText().toString());
         }
     }
@@ -90,7 +101,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
     public void setSuggestAdapter(RecyclerView.Adapter<? extends RecyclerView.ViewHolder> adapter) {
         mSuggestsAdapter = adapter;
         mRvSuggestion.setAdapter(adapter);
-        mVOverlay.setVisibility(VISIBLE);
+        if (!hideShadow) {
+            mVOverlay.setVisibility(VISIBLE);
+        }
     }
 
     public void showSuggestion(){
@@ -124,7 +137,9 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
 
         mIgnoreNextTextChange = false;
         hideSuggestion();
-        mVOverlay.setVisibility(GONE);
+        if (!hideShadow) {
+            mVOverlay.setVisibility(GONE);
+        }
     }
 
     @Override
@@ -143,10 +158,22 @@ public class SuggestionMaterialSearchView extends BaseMaterialSearchView impleme
         int i = view.getId();
         if (i == R.id.bt_back) {
             closeSearch();
-        } else if (i == R.id.ed_search_text) {
+        } else if (i == R.id.ed_search_text && !hideShadow) {
             mVOverlay.setVisibility(VISIBLE);
         } else if (i == R.id.v_overlay) {
             closeSearch();
+        }
+    }
+
+    private void initStyle(AttributeSet attrs, int defStyleAttr) {
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Msv, defStyleAttr, 0);
+
+        if (a != null) {
+            if (a.hasValue(R.styleable.Msv_msvHideShadow)) {
+                hideShadow = a.getBoolean(R.styleable.Msv_msvHideShadow, false);
+            }
+
+            a.recycle();
         }
     }
 }
