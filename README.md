@@ -1,3 +1,5 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Search%20View-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/4765)
+
 # Material Search View
 Cute library to implement SearchView in a Material Design Approach. *Works from Android API 14 (ICS) and above*.
 
