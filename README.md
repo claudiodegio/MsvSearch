@@ -77,7 +77,7 @@ dependencies {
     }
 ```
 
-**Hook up your OnSearchViewListener and implement following methods**
+**implement following methods from OnSearchViewListener**
 ```java
     @Override
     public void onSearchViewShown() {
@@ -100,6 +100,63 @@ dependencies {
 
     }
 ```
+** Hook your OnSearchViewListener and don't forget to add toolbar and set it as support action bar!!**
+```java
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.test_msv_simple);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mSearchView = (MaterialSearchView) findViewById(R.id.sv);
+        mSearchView.setOnSearchViewListener(this); // this class implements OnSearchViewListener
+    }
+```
+** Example of layout file **
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_item"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <com.claudiodegio.msv.MaterialSearchView
+        android:id="@+id/sv"
+        android:elevation="5dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.claudiodegio.msv.MaterialSearchView>
+
+</android.support.design.widget.CoordinatorLayout>
+```
+
+** More detailed and advanced examples coming soon! **
+
+
 
 # Help me
 Pull requests are more than welcome, help me and others improve this awesome library.
