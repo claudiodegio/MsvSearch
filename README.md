@@ -51,14 +51,18 @@ dependencies {
 </FrameLayout>
 ```
 
-**Add the search item into the menu file:**
+**Create a menu resource file and add the search item into the menu file:**
 ```xml
-	<item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_action_action_search"
-        android:orderInCategory="100"
-        android:title="@string/abc_search_hint"
-        app:showAsAction="always" />
+	<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/action_search"
+            android:title="Search"
+            android:icon="@drawable/ic_magnify_white_24dp"
+            app:showAsAction="always"
+            />
+    </menu>
 ```
 **Add define it in the *onCreateOptionsMenu*:**
 ```java
@@ -70,6 +74,30 @@ dependencies {
         searchView.setMenuItem(item);
 
         return true;
+    }
+```
+
+**Hook up your OnSearchViewListener and implement following methods**
+```java
+    @Override
+    public void onSearchViewShown() {
+
+    }
+
+    @Override
+    public void onSearchViewClosed() {
+
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        // handle text submit and then return true
+        return false;
+    }
+
+    @Override
+    public void onQueryTextChange(String newText) {
+
     }
 ```
 
