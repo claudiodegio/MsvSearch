@@ -77,7 +77,7 @@ dependencies {
     }
 ```
 
-**implement following methods from OnSearchViewListener**
+**Implement following methods from OnSearchViewListener**
 ```java
     @Override
     public void onSearchViewShown() {
