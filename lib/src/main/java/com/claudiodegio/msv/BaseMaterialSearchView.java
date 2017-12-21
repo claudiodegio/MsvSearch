@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -299,11 +300,33 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
         return savedState;
     }
 
-    class BaseMSVSavedState extends BaseSavedState {
+    static class BaseMSVSavedState extends BaseSavedState {
         public boolean isOpen;
 
         public BaseMSVSavedState(Parcelable superState) {
             super(superState);
+        }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+            out.writeByte(isOpen ? (byte) 1 : (byte) 0);
+        }
+
+        public static final Parcelable.Creator<BaseMSVSavedState> CREATOR =
+                new Parcelable.Creator<BaseMSVSavedState>() {
+                    public BaseMSVSavedState createFromParcel(Parcel in) {
+                        return new BaseMSVSavedState(in);
+                    }
+
+                    public BaseMSVSavedState[] newArray(int size) {
+                        return new BaseMSVSavedState[size];
+                    }
+                };
+
+        public BaseMSVSavedState(Parcel in) {
+            super(in);
+            isOpen = in.readByte() == 1;
         }
     }
 
