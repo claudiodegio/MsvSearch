@@ -338,4 +338,9 @@ public abstract class BaseMaterialSearchView extends FrameLayout implements View
             mSearchTopBar.setBackgroundDrawable(background);
         }
     }
+
+
+    public String getQuery(){
+        return mETSearchText.getEditableText().toString();
+    }
 }
